@@ -6,7 +6,7 @@
 
 **Running**
 
-This command will grab all `.scss` files and put it inside the `/styles/` folder.
+This command will grab all `.scss` files from the `/sass/` folder and put it inside the `/css/` folder as `.css` files.
 
 `sass --watch sass:css`
 
