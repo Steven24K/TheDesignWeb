@@ -26,4 +26,4 @@ Follow the steps below in order to create your own page on The Design Web.
 11. Go to the forked repo on GitHub. 
 12. Create a new pull request to merge with the main repository. 
 13. Wait unitl the owner approves your request.
-14. See your changes live on the wesite.
+14. See your changes live on the [Website](https://stevenkoerts.nl/TheDesignWeb).
