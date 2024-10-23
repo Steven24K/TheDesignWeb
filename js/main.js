@@ -1,10 +1,12 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+require("./sampe-project/index.html");
 const pages = [
     {
         title: "The Basic Styleguide",
         description: "This guide helps you get started with essential design principles and guidelines for clean, effective web design.",
         link: { text: "Check this out!", url: "./the-basic-styleguide/index.html" },
-        image: { alt: "Design Thumbnail", url: "./the-basic-styleguide/images/photo-1726853546098-380e29da9e31.avif" }
+        image: { alt: "Design Thumbnail", url: "./sampe-project/images/steven.avif" }
     }
 ];
 const webpages_list = document.querySelector("#webpages-list");
