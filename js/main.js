@@ -1,4 +1,6 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+require("./sampe-project/index.html");
 const pages = [
     {
         title: "The Basic Styleguide",
