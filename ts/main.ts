@@ -21,6 +21,12 @@ const pages: WebPage[] = [
         description: "This guide helps you get started with essential design principles and guidelines for clean, effective web design.",
         link: { text: "Check this out!", url: "./the-basic-styleguide/index.html" },
         image: { alt: "Design Thumbnail", url: "./the-basic-styleguide/images/photo-1726853546098-380e29da9e31.avif" }
+    },
+    {
+        title: "StardropMeadow",
+        description: "Colorpalette",
+        link : { text: "StardropMeadow", url: "./StardropMeadow/index.html"},
+        image: {alt: "Thumbnail", url: "./StardropMeadow/Images/stardrop.jpg"}
     }
 ]
 
