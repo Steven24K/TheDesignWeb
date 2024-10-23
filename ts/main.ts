@@ -1,5 +1,3 @@
-import './sampe-project/index.html';
-
 type Link = {
     url: string
     text: string
