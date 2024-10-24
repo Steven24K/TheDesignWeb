@@ -1,0 +1,207 @@
+// Variables
+$font-family: 'Arial', sans-serif;
+$primary-color: #6EC1E4;
+$primary-hover: #1A237E;
+$secondary-color: #54595F;
+$secondary-hover: #FF9800;
+$accent-color: #61CE70;
+$text-color: #7A7A7A;;
+$light-gray-bg: #f9f9f9;
+$dark-gray: #333;
+$white: #fff;
+
+// Shake Animation
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-2px); }
+    20%, 40%, 60%, 80% { transform: translateX(2px); }
+}
+
+// General Styles
+body {
+    font-family: $font-family;
+    margin: 0;
+    padding: 0;
+    background-color: $light-gray-bg;
+    color: $text-color;
+    animation: shake 0.5s infinite;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    animation: shake 0.5s infinite;
+}
+
+// Header
+.header {
+    background-color: $primary-color;
+    color: $white;
+    text-align: center;
+    padding: 50px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: shake 0.5s infinite;
+
+    h1 {
+        font-size: 2.5em;
+        margin: 0;
+    }
+
+    p {
+        font-size: 1.2em;
+        margin-top: 10px;
+    }
+}
+
+// Typography
+.typography {
+    h2 {
+        font-size: 2em;
+        margin-top: 40px;
+    }
+
+    p {
+        font-size: 1.1em;
+        line-height: 1.6;
+    }
+
+    a {
+        color: $primary-color;
+        text-decoration: underline;
+
+        &:hover {
+            color: $primary-hover;
+        }
+    }
+}
+
+// Buttons
+.buttons {
+    margin-top: 40px;
+
+    button {
+        padding: 10px 20px;
+        font-size: 1em;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        margin-right: 10px;
+        transition: background-color 0.3s;
+    }
+
+    .btn-primary {
+        background-color: $primary-color;
+        color: $white;
+
+        &:hover {
+            background-color: $primary-hover;
+        }
+    }
+
+    .btn-secondary {
+        background-color: $secondary-color;
+        color: $white;
+
+        &:hover {
+            background-color: $secondary-hover;
+        }
+    }
+}
+
+// Color Schemes
+.colors {
+    margin-top: 40px;
+
+    .color-samples {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+
+        .color-box {
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            font-weight: bold;
+            color: $white;
+            border-radius: 5px;
+
+            &.color-primary {
+                background-color: $primary-color;
+            }
+
+            &.color-secondary {
+                background-color: $secondary-color;
+            }
+
+            &.color-accent {
+                background-color: $accent-color;
+            }
+        }
+    }
+}
+
+// Flexbox Layout
+.flexbox {
+    margin-top: 40px;
+
+    .flex-container {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+
+        .flex-item {
+            background-color: $accent-color;
+            color: $white;
+            padding: 20px;
+            border-radius: 5px;
+            flex: 1;
+            margin: 0 10px;
+            text-align: center;
+        }
+    }
+}
+
+// Grid Layout
+.grid {
+    margin-top: 40px;
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        margin-top: 20px;
+
+        .grid-item {
+            background-color: $primary-color;
+            color: $white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+        }
+    }
+}
+
+// Footer
+.footer {
+    background-color: $dark-gray;
+    color: $white;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 40px;
+
+    a {
+        color: $secondary-color;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+// Apply shake animation to all elements
+* {
+    animation: shake 0.5s infinite;
+}
