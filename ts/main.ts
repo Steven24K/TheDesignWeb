@@ -6,6 +6,7 @@ type Link = {
 type Image = {
     url: string
     alt: string
+    class?: string
 }
 
 type WebPage = {
@@ -40,6 +41,12 @@ const pages: WebPage[] = [
         link: { text: "Check this out!", url: "./the-parkinson-styleguide/index.html" },
         image: { alt: "Design Thumbnail", url: "./the-parkinson-styleguide/images/old-man-symptoms-parkinson-disease_24911-63254.avif" }
     },
+    {
+        title: "The Dog Styleguide",
+        description: "This guide helps you understand dog emotions",
+        link: { text: "Check this out!", url: "./the-dog-styleguide/index.html" },
+        image: { alt: "Design Thumbnail", url: "./the-dog-styleguide/images/dog.png", class:"dog" }
+    },
 ]
 
 const webpages_list = document.querySelector("#webpages-list")
@@ -64,6 +71,10 @@ if (webpages_list != null) {
         const img = document.createElement('img')
         img.src = page.image.url
         img.alt = page.image.alt
+        if (page.image.class != undefined)
+        {
+            img.className = page.image.class ?? "";
+        }
 
         const div_card = document.createElement('div')
         div_card.className = "card"

@@ -98,6 +98,14 @@ body {
   color: #fff;
 }
 
+.dog {
+  width: 39% !important;
+  height: 301px !important;
+  margin-left: auto;
+  display: block;
+  margin-right: auto;
+}
+
 .footer {
   background-color: #303036;
   color: #fff;
