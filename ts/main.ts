@@ -27,7 +27,8 @@ const pages: WebPage[] = [
         description: "Colorpalette",
         link : { text: "StardropMeadow", url: "./StardropMeadow/index.html"},
         image: {alt: "Thumbnail", url: "./StardropMeadow/Images/stardrop.jpg"}
-    }
+    },
+    {
         title: "je ne sais pas",
         description: "ぐずぐず煮え切らない。甘い迷い。僕は優柔不断な男だろうか、それすらも決められない。",
         link: { text: "look away!", url: "./優柔不断/index.html" },
