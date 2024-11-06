@@ -1,5 +1,3 @@
-import { MockAgent } from "undici-types"
-
 console.log('Hello Workshop')
 
 
@@ -113,7 +111,7 @@ let list1 = ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5, Empty())
 // 1. Build a .map function for the linked list
 // 2. Use it to increment each item of the list
 
-const map = <ti, to>(list: LinkedList<t>, func: (_: ti) => to): LinkedList<to> => {
+const map = <ti, to>(list: LinkedList<ti>, func: (_: ti) => to): LinkedList<to> => {
 	if (list.kind === 'empty') {
 		return Empty()
 	}
