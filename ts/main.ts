@@ -19,7 +19,7 @@ const pages: WebPage[] = [
     {
         title: "The Basic Styleguide",
         description: "This guide helps you get started with essential design principles and guidelines for clean, effective web design.",
-        link: { text: "Check this out!", url: "./the-basic-styleguide/index.html" },
+        link: { text: "Check this out!", url: "./the-basic-styleguide/Design/index.html" },
         image: { alt: "Design Thumbnail", url: "./the-basic-styleguide/images/photo-1726853546098-380e29da9e31.avif" }
     },
     {
