@@ -17,5 +17,3 @@ let url: `http${"s" | ""}://${string}/` = "http://example.com/";
 
 // this one only allows values like A12 or N101
 let highwayCode: `${"A" | "N" | "S"}${number}` = "A12";
-
-
