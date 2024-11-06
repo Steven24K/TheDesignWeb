@@ -98,7 +98,7 @@ type ListNode<a> = {
 
 type Empty<a> = {
     kind: 'empty',
-    map: <b>(f: (_: a) => b) => LinkedList<b>
+    map: <b>(f: (_: a) => b) => Empty<b>
 }
 
 type LinkedList<a> = ListNode<a> | Empty<a>
@@ -114,9 +114,9 @@ const ListNode = <a>(value: a, tail: LinkedList<a>): LinkedList<a> => (
     }
 })
 
-const Empty = <a>(): LinkedList<a> => ({
+const Empty = <a>(): Empty<a> => ({
     kind: 'empty',
-    map: function <b>(f: (_: a) => b): LinkedList<b> {
+    map: function <b>(f: (_: a) => b): Empty<b> {
         return Empty<b>()
     }
 })
