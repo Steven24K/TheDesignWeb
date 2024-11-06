@@ -67,3 +67,8 @@ If you have implemented all the methods then show the counter state on an HTML p
 Where all of the methods are mapped to a button and the actions are invoked when the user clicks on a button.
 
 Can you create a counter that counts automatically with a given time interval?
+
+**Can you React?** 
+
+> If you are done with the plain HTML implementation can you build a version using React? https://react.dev/ What are the main differences? To what problem does React provide a solution? 
+
