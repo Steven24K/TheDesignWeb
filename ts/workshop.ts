@@ -108,8 +108,11 @@ const Empty = <a>(): LinkedList<a> => ({ kind: 'empty' })
 
 let list1 = ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5, Empty())))))
 
+
+
 // 1. Build a .map function for the linked list
-// 2. Use it to increment each item of the list
+
+// 2. Use the map function it to increment each item of the list
 
 const map = <ti, to>(list: LinkedList<ti>, func: (_: ti) => to): LinkedList<to> => {
 	if (list.kind === 'empty') {
@@ -133,3 +136,8 @@ map(list, i => i + 1);
 // 5. Make a .filter() method that takes a predicate function as input. Every element is checked against the predicate and 
 //    and if the element matches the condition it is added to a new list. 
 //    Hint: Use the reduce() function to implement the filter method.
+
+// 6. Make a .toString() method using the .reduce() function. The function transforms the list insto a single formatted string 
+//    Where every value is divided by a comma.
+
+// 7. Go back to the .map function from question 1 and use reduce to implement map().
