@@ -9,6 +9,22 @@
     transform: translateX(2px);
   }
 }
+@keyframes move-banner {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+@keyframes scroll-page {
+  0%, 100% {
+    scroll-behavior: smooth;
+  }
+  50% {
+    scroll-behavior: smooth;
+  }
+}
 body {
   font-family: "Arial", sans-serif;
   margin: 0;
@@ -26,12 +42,13 @@ body {
 }
 
 .header {
-  background-color: #6EC1E4;
+  background: url("../the-parkinson-styleguide/images/cat.gif") repeat-x;
+  background-size: auto 100%;
   color: #fff;
   text-align: center;
   padding: 50px 0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  animation: shake 0.5s infinite;
+  animation: move-banner 10s linear infinite;
 }
 .header h1 {
   font-size: 2.5em;
@@ -69,6 +86,7 @@ body {
   border-radius: 5px;
   margin-right: 10px;
   transition: background-color 0.3s;
+  animation: shake 0.5s infinite;
 }
 .buttons .btn-primary {
   background-color: #6EC1E4;
@@ -160,6 +178,10 @@ body {
 }
 .footer a:hover {
   text-decoration: underline;
+}
+
+.video-container {
+  animation: shake 0.5s infinite;
 }
 
 * {

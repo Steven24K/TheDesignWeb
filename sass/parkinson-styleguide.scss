@@ -17,6 +17,25 @@ $white: #fff;
     20%, 40%, 60%, 80% { transform: translateX(2px); }
 }
 
+// Banner Animation
+@keyframes move-banner {
+    0% { background-position: 0 0; }
+    100% { background-position: 100% 0; }
+}
+
+// Scroll animation
+@keyframes scroll-page {
+
+    0%,
+    100% {
+        scroll-behavior: smooth;
+    }
+
+    50% {
+        scroll-behavior: smooth;
+    }
+}
+
 // General Styles
 body {
     font-family: $font-family;
@@ -36,12 +55,14 @@ body {
 
 // Header
 .header {
-    background-color: $primary-color;
+    background: 
+    url('../the-parkinson-styleguide/images/cat.gif') repeat-x;
+    background-size: auto 100%; // Change this line
     color: $white;
     text-align: center;
     padding: 50px 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    animation: shake 0.5s infinite;
+    animation: move-banner 10s linear infinite;
 
     h1 {
         font-size: 2.5em;
@@ -88,6 +109,7 @@ body {
         border-radius: 5px;
         margin-right: 10px;
         transition: background-color 0.3s;
+        animation: shake 0.5s infinite;
     }
 
     .btn-primary {
@@ -199,6 +221,10 @@ body {
             text-decoration: underline;
         }
     }
+}
+
+.video-container {
+    animation: shake 0.5s infinite;
 }
 
 // Apply shake animation to all elements

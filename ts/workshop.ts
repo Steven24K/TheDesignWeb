@@ -91,22 +91,38 @@ console.log(plus5)
 
 type ListNode<a> = {
     kind: 'node',
-    value: a
-    tail: LinkedList<a>
+    value: a,
+    tail: LinkedList<a>,
+    map: <b>(f: (_: a) => b) => LinkedList<b>
 }
 
 type Empty<a> = {
-    kind: 'empty'
+    kind: 'empty',
+    map: <b>(f: (_: a) => b) => LinkedList<b>
 }
 
 type LinkedList<a> = ListNode<a> | Empty<a>
 
 
-const ListNode = <a>(value: a, tail: LinkedList<a>): LinkedList<a> => ({ kind: 'node', value: value, tail: tail })
+const ListNode = <a>(value: a, tail: LinkedList<a>): LinkedList<a> => (
+{ 
+    kind: 'node', 
+    value: value, 
+    tail: tail,
+    map: function <b>(f: (_: a) => b): LinkedList<b> {
+        return ListNode<b>(f(this.value), this.tail.map(f))
+    }
+})
 
-const Empty = <a>(): LinkedList<a> => ({ kind: 'empty' })
+const Empty = <a>(): LinkedList<a> => ({
+    kind: 'empty',
+    map: function <b>(f: (_: a) => b): LinkedList<b> {
+        return Empty<b>()
+    }
+})
 
 let list1 = ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5, Empty())))))
+let list2 = list1.map(add(1))
 
 // 1. Build a .map function for the linked list
 // 2. Use it to increment each item of the list
