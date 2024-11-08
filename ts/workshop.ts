@@ -41,42 +41,39 @@ const count_array = <a>(arr: a[]): number => {
 
 // A first datastructure the Option type
 
-type Sum<a, b> = { kind: 'left', v: a } | { kind: 'right', v: b }
-type Maybe<a> = Sum<a, false>
+type Sum<a, b> = { kind: 'left', value: a } | { kind: 'right', value: b }
 
-const maybe = <a>(v: a): Maybe<a> => ({ kind: 'left', v: v })
-const definitely = <a>(): Maybe<a> => ({ kind: 'right', v: false })
-
-type Option<a> = ({
-    kind: 'some',
-    value: a
-} | {
-    kind: 'none'
-}) & {
+type Option<a> = Sum<a, false> & {
     map: <b>(f: (_: a) => b) => Option<b>
 }
 
-
 const Some = <a>(v: a): Option<a> => ({
-    kind: 'some',
+    kind: 'left',
     value: v,
     map: function <b>(f: (_: a) => b): Option<b> {
         return Some<b>(f(this.value))
     }
 })
 const None = <a>(): Option<a> => ({
-    kind: 'none',
+    kind: 'right',
+    value: false,
     map: function <b>(f: (_: a) => b): Option<b> {
         return None<b>()
     }
 })
 
-let optional: Option<number> = Some(4)
+let optional1: Option<number> = Some(4)
+console.log("Option 1 value: ", optional1.value)
 
-let plus5 = optional.map(add(5))
+let optional2: Option<number> = None()
+console.log("Option 2 value: ", optional2.value)
 
-console.log(optional)
-console.log(plus5)
+
+let plus5 = optional1.map(add(5))
+console.log("When we increment option 1 we have value: ", plus5.value)
+
+let plus1 = optional1.map(add(1))
+console.log("When we try to increment option 2 nothing happens, because it is None() and value is:  ", plus1.value)
 
 
 // Adding a .map function to transform Option<a> into Option<b>
