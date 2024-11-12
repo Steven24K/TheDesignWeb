@@ -96,12 +96,12 @@ type Empty<a> = {
     kind: 'empty'
 }
 
-type LinkedList<a> = ListNode<a> | Empty<a>
+export type LinkedList<a> = ListNode<a> | Empty<a>
 
 
-const ListNode = <a>(value: a, tail: LinkedList<a>): LinkedList<a> => ({ kind: 'node', value: value, tail: tail })
+export const ListNode = <a>(value: a, tail: LinkedList<a>): LinkedList<a> => ({ kind: 'node', value: value, tail: tail })
 
-const Empty = <a>(): LinkedList<a> => ({ kind: 'empty' })
+export const Empty = <a>(): LinkedList<a> => ({ kind: 'empty' })
 
 let list1 = ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5, Empty())))))
 
