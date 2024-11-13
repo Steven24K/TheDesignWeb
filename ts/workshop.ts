@@ -106,7 +106,6 @@ export const Empty = <a>(): LinkedList<a> => ({ kind: 'empty' })
 let list1 = ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5, Empty())))))
 
 
-
 // 1. Build a .map function for the linked list
 
 // 2. Use the map function it to increment each item of the list

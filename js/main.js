@@ -7,23 +7,11 @@ const pages = [
         image: { alt: "Design Thumbnail", url: "./the-basic-styleguide/images/photo-1726853546098-380e29da9e31.avif" }
     },
     {
-        title: "StardropMeadow",
-        description: "Colorpalette",
-        link: { text: "StardropMeadow", url: "./StardropMeadow/index.html" },
-        image: { alt: "Thumbnail", url: "./StardropMeadow/Images/stardrop.jpg" }
-    },
-    {
-        title: "je ne sais pas",
-        description: "ぐずぐず煮え切らない。甘い迷い。僕は優柔不断な男だろうか、それすらも決められない。",
-        link: { text: "look away!", url: "./優柔不断/index.html" },
-        image: { alt: "Cool pic", url: "./the-basic-styleguide/images/wallpaper2.jpg" }
-    },
-    {
-        title: "The Parkinson Styleguide",
-        description: "This guide helps you get started with parkinson",
-        link: { text: "Check this out!", url: "./the-parkinson-styleguide/index.html" },
-        image: { alt: "Design Thumbnail", url: "./the-parkinson-styleguide/images/old-man-symptoms-parkinson-disease_24911-63254.avif" }
-    },
+        title: "Lijcoesh",
+        description: "Een website zo mooi dat Van Gogh het niet eens zou kunnen maken als die nu zou leven",
+        link: { text: "Kijk hiernaar!", url: "./Tanis/index.html" },
+        image: { alt: "Design Thumbnail", url: "./the-basic-styleguide/images/photo-1726853546098-380e29da9e31.avif" }
+    }
 ];
 const webpages_list = document.querySelector("#webpages-list");
 if (webpages_list != null) {
