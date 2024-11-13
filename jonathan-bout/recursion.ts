@@ -13,3 +13,11 @@ const factorial = (n: number): number => {
 
   return factorial(n - 1) * n;
 };
+
+const exponential = (n: number): number => {
+  if (n == 1) {
+    return 1;
+  }
+
+  return Math.pow(exponential(n - 1), n);
+};
