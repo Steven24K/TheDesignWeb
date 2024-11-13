@@ -1,10 +1,25 @@
-function handlesum(value) {
-    if (value.kind === 'left') {
-        console.log("Number:", value.v);
+var Some = function (v) { return ({ kind: 'left', value: v }); };
+var None = function () { return ({ kind: 'right', value: false }); };
+// toepassing
+var x = Some(42);
+var y = None();
+console.log(x);
+console.log(y);
+function printOptionValue(opt) {
+    if (opt.kind === 'left') {
+        console.log("Value is:", opt.value);
     }
-    else if (value.kind === 'right') {
-        console.log("String:", value.v);
+    else {
+        console.log("No value present");
     }
 }
-handlesum({ kind: 'left', v: 12 });
-handlesum({ kind: 'right', v: 'Hi' });
+printOptionValue(x);
+printOptionValue(y);
+// opdracht 2
+var sumupto = function (n) {
+    if (n < 0) {
+        return 0;
+    }
+    return n + sumupto(n - 1);
+};
+console.log(sumupto(5));
