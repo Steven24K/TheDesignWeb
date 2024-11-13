@@ -1,10 +1,10 @@
-type Sum<a,b> = {kind: 'left',v:a}| {kind:'right', v:b }
+// type Sum<a,b> = {kind: 'left',v:a}| {kind:'right', v:b }
 
-type Option<a> = Sum<a, false>
+// type Option<a> = Sum<a, false>
 
-const optionA = <a>(v : a):Option<a> => ({kind : 'left', v})
+// const optionA = <a>(v : a):Option<a> => ({kind : 'left', v})
 
-const optionB = <a>():Option<a> => ({kind : 'right', v : false})
+// const optionB = <a>():Option<a> => ({kind : 'right', v : false})
 
 
 const SumUpTo = (n: number): number => {
