@@ -25,7 +25,6 @@ const count_array = (arr) => {
     arr.pop();
     return count_array(arr) + 1;
 };
-
 const Some = (v) => ({
     kind: 'left',
     value: v,
@@ -48,11 +47,9 @@ let plus5 = optional1.map(add(5));
 console.log("When we increment option 1 we have value: ", plus5.value);
 let plus1 = optional1.map(add(1));
 console.log("When we try to increment option 2 nothing happens, because it is None() and value is:  ", plus1.value);
-
 const ListNode = (value, tail) => ({ kind: 'node', value: value, tail: tail });
 exports.ListNode = ListNode;
 const Empty = () => ({ kind: 'empty' });
-
 exports.Empty = Empty;
 let list1 = (0, exports.ListNode)(1, (0, exports.ListNode)(2, (0, exports.ListNode)(3, (0, exports.ListNode)(4, (0, exports.ListNode)(5, (0, exports.Empty)())))));
 // 1. Build a .map function for the linked list
@@ -69,4 +66,3 @@ let list1 = (0, exports.ListNode)(1, (0, exports.ListNode)(2, (0, exports.ListNo
 // 6. Make a .toString() method using the .reduce() function. The function transforms the list insto a single formatted string 
 //    Where every value is divided by a comma.
 // 7. Go back to the .map function from question 1 and use reduce to implement map().
-
