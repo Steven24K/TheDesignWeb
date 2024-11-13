@@ -46,3 +46,13 @@ var checkRecWithRec = function (n) {
 };
 // Checks if the two functions are equal for all n from 0 to n
 console.log(sumUpTo(5) == sumUpToRec(5));
+// 3.
+var add = function (a, b) { return a + b; };
+var add_curried = function (a) { return function (b) { return a + b; }; };
+var library = [
+    { title: "The Pragmatic Programmer", author: "Andrew Hunt", genre: "Technology", year: 1999 },
+    { title: "Clean Code", author: "Robert C. Martin", genre: "Technology", year: 2008 },
+    { title: "To Kill a Mockingbird", author: "Harper Lee", genre: "Fiction", year: 1960 },
+    { title: "1984", author: "George Orwell", genre: "Fiction", year: 1949 },
+    { title: "Sapiens", author: "Yuval Noah Harari", genre: "Non-Fiction", year: 2011 },
+];

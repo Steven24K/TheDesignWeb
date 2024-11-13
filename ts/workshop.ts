@@ -108,34 +108,7 @@ let list1 = ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5, Empty())
 
 // 1. Build a .map function for the linked list
 
-//create a map function that takes a linkedlist and a function, then applies that function to every node
-
-//parameters: linkedlist, function
-//return: linkedlist
-
-//function that takes a linkedlist+function, returns linkedlist
-//a:b=>c
-//a = name, b = return type, c = ______
-
-//          types    ll parameter       func parameter     return type       what it is
-const map = <a, b>(list: LinkedList<a>, f:(value:a) => b): LinkedList<b> => {
-    //base case: if kind is empty, return Empty<a>
-    if (list.kind === "empty") {
-        return Empty<b>()
-    }
-    //else, apply the function to the linkedlist
-    //             value of list?   maps tail to f
-    return ListNode(f(list.value), map(list.tail, f))
-}
-
 // 2. Use it to increment each item of the list
-
-//create function that increments a number
-
-//apply the function to the list
-
-//print the result
-
 
 
 
