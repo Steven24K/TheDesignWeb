@@ -1,20 +1,15 @@
 // Variables
 $font-family: 'Arial', sans-serif;
-$primary-color: #6EC1E4;
+$primary-color: #3F51B5;
 $primary-hover: #1A237E;
-$secondary-color: #54595F;
+$secondary-color: #FFC107;
 $secondary-hover: #FF9800;
-$accent-color: #61CE70;
-$text-color: #7A7A7A;;
+$accent-color: #E91E63;
+$text-color: #333;
 $light-gray-bg: #f9f9f9;
 $dark-gray: #333;
 $white: #fff;
-// Shake Animation
-@keyframes shake {
-    0%, 100% { transform: translateX(0); }
-    10%, 30%, 50%, 70%, 90% { transform: translateX(-2px); }
-    20%, 40%, 60%, 80% { transform: translateX(2px); }
-}
+
 // General Styles
 body {
     font-family: $font-family;
@@ -22,54 +17,69 @@ body {
     padding: 0;
     background-color: $light-gray-bg;
     color: $text-color;
-    animation: shake 0.5s infinite;
 }
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-    animation: shake 0.5s infinite;
 }
+
 // Header
 .header {
-    background-color: $primary-color;
     color: $white;
     text-align: center;
     padding: 50px 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    animation: shake 0.5s infinite;
+    background: url("C:/Users/lucan/Desktop/Jaar 2/GenZVanGogh/GenZVanGogh/Images/baardman.jpg");
+    background-size: contain, contain, contain;
+    animation: moveBackground 0.1s linear infinite;
+    @keyframes moveBackground {
+        0% {
+            background-position: 0% 0%, 100% 0%, 200% 0%;
+        }
+        100% {
+            background-position: 100% 0%, 200% 0%, 300% 0%;
+        }
+    }
     h1 {
         font-size: 2.5em;
-        margin: 0;
     }
+
     p {
         font-size: 1.2em;
         margin-top: 10px;
     }
 }
+
 // Typography
 .typography {
     h2 {
         font-size: 2em;
         margin-top: 40px;
     }
+
     p {
         font-size: 1.1em;
         line-height: 1.6;
     }
+
     a {
         color: $primary-color;
         text-decoration: underline;
+
         &:hover {
             color: $primary-hover;
         }
     }
 }
+
 // Buttons
 .buttons {
     margin-top: 40px;
+
     button {
-        padding: 10px 20px;
+        padding: 10% 7%;
         font-size: 1em;
         border: none;
         cursor: pointer;
@@ -77,28 +87,37 @@ body {
         margin-right: 10px;
         transition: background-color 0.3s;
     }
+
+
     .btn-primary {
-        background-color: $primary-color;
+        background-image: url("C:/Users/lucan/Desktop/Jaar 2/GenZVanGogh/GenZVanGogh/Images/dontPress.png");
+        background-size: 100%;
         color: $white;
+
         &:hover {
             background-color: $primary-hover;
         }
     }
+
     .btn-secondary {
         background-color: $secondary-color;
         color: $white;
+
         &:hover {
             background-color: $secondary-hover;
         }
     }
 }
+
 // Color Schemes
 .colors {
     margin-top: 40px;
+
     .color-samples {
         display: flex;
         justify-content: space-around;
         margin-top: 20px;
+
         .color-box {
             width: 100px;
             height: 100px;
@@ -107,25 +126,31 @@ body {
             font-weight: bold;
             color: $white;
             border-radius: 5px;
+
             &.color-primary {
                 background-color: $primary-color;
             }
+
             &.color-secondary {
                 background-color: $secondary-color;
             }
+
             &.color-accent {
                 background-color: $accent-color;
             }
         }
     }
 }
+
 // Flexbox Layout
 .flexbox {
     margin-top: 40px;
+
     .flex-container {
         display: flex;
         justify-content: space-around;
         margin-top: 20px;
+
         .flex-item {
             background-color: $accent-color;
             color: $white;
@@ -137,14 +162,17 @@ body {
         }
     }
 }
+
 // Grid Layout
 .grid {
     margin-top: 40px;
+
     .grid-container {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 10px;
         margin-top: 20px;
+
         .grid-item {
             background-color: $primary-color;
             color: $white;
@@ -154,6 +182,7 @@ body {
         }
     }
 }
+
 // Footer
 .footer {
     background-color: $dark-gray;
@@ -161,15 +190,43 @@ body {
     text-align: center;
     padding: 30px 0;
     margin-top: 40px;
+
     a {
         color: $secondary-color;
         text-decoration: none;
+
         &:hover {
             text-decoration: underline;
         }
     }
+    /* Laser basisstijl */
+    .laser {
+        position: absolute;
+        width: 2px;
+        height: 100%;
+        background-color: red;
+        top: 0;
+        left: 50%;
+        transform-origin: center;
+        transform: rotate(45deg);
+        opacity: 0;
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    /* Laseranimatie */
+    .laser.show {
+        opacity: 1;
+        animation: laser-move 1s ease-in-out;
+    }
+
+    @keyframes laser-move {
+        0% {
+            transform: translateX(-50%) rotate(45deg) scaleY(0);
+        }
+        100% {
+            transform: translateX(-50%) rotate(45deg) scaleY(1);
+        }
+    }
 }
-// Apply shake animation to all elements
-* {
-    animation: shake 0.5s infinite;
-}
+
