@@ -1,4 +1,6 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Empty = exports.ListNode = void 0;
 console.log('Hello Workshop');
 // basic types 
 let string_type = "hello world";
@@ -23,28 +25,33 @@ const count_array = (arr) => {
     arr.pop();
     return count_array(arr) + 1;
 };
-const maybe = (v) => ({ kind: 'left', v: v });
-const definitely = () => ({ kind: 'right', v: false });
 const Some = (v) => ({
-    kind: 'some',
+    kind: 'left',
     value: v,
     map: function (f) {
         return Some(f(this.value));
     }
 });
 const None = () => ({
-    kind: 'none',
+    kind: 'right',
+    value: false,
     map: function (f) {
         return None();
     }
 });
-let optional = Some(4);
-let plus5 = optional.map(add(5));
-console.log(optional);
-console.log(plus5);
+let optional1 = Some(4);
+console.log("Option 1 value: ", optional1.value);
+let optional2 = None();
+console.log("Option 2 value: ", optional2.value);
+let plus5 = optional1.map(add(5));
+console.log("When we increment option 1 we have value: ", plus5.value);
+let plus1 = optional1.map(add(1));
+console.log("When we try to increment option 2 nothing happens, because it is None() and value is:  ", plus1.value);
 const ListNode = (value, tail) => ({ kind: 'node', value: value, tail: tail });
+exports.ListNode = ListNode;
 const Empty = () => ({ kind: 'empty' });
-let list1 = ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5, Empty())))));
+exports.Empty = Empty;
+let list1 = (0, exports.ListNode)(1, (0, exports.ListNode)(2, (0, exports.ListNode)(3, (0, exports.ListNode)(4, (0, exports.ListNode)(5, (0, exports.Empty)())))));
 // 1. Build a .map function for the linked list
 // 2. Use the map function it to increment each item of the list
 // 3. Make a transform function using map to create a list of booleans. True for even values and false for odd values. 
