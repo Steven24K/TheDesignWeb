@@ -23,6 +23,12 @@ const pages: WebPage[] = [
         image: { alt: "Design Thumbnail", url: "./the-basic-styleguide/images/photo-1726853546098-380e29da9e31.avif" }
     },
     {
+        title: "Lijcoesh",
+        description: "Een website zo mooi dat Van Gogh het niet eens zou kunnen maken als die nu zou leven",
+        link: { text: "Kijk hiernaar!", url: "./Tanis/index.html"},
+        image: { alt: "Design Thumbnail", url: "./the-basic-styleguide/images/photo-1726853546098-380e29da9e31.avif" }
+    },
+    {
         title: "StardropMeadow",
         description: "Colorpalette",
         link : { text: "StardropMeadow", url: "./StardropMeadow/index.html"},
@@ -39,7 +45,7 @@ const pages: WebPage[] = [
         description: "This guide helps you get started with parkinson",
         link: { text: "Check this out!", url: "./the-parkinson-styleguide/index.html" },
         image: { alt: "Design Thumbnail", url: "./the-parkinson-styleguide/images/old-man-symptoms-parkinson-disease_24911-63254.avif" }
-    },
+    }
 ]
 
 const webpages_list = document.querySelector("#webpages-list")

@@ -1,41 +1,36 @@
-@keyframes shake {
-  0%, 100% {
-    transform: translateX(0);
-  }
-  10%, 30%, 50%, 70%, 90% {
-    transform: translateX(-2px);
-  }
-  20%, 40%, 60%, 80% {
-    transform: translateX(2px);
-  }
-}
 body {
   font-family: "Arial", sans-serif;
   margin: 0;
   padding: 0;
   background-color: #f9f9f9;
-  color: #7A7A7A;
-  animation: shake 0.5s infinite;
+  color: #333;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-  animation: shake 0.5s infinite;
 }
 
 .header {
-  background-color: #6EC1E4;
   color: #fff;
   text-align: center;
   padding: 50px 0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  animation: shake 0.5s infinite;
+  background: url("C:/Users/lucan/Desktop/Jaar 2/GenZVanGogh/GenZVanGogh/Images/baardman.jpg");
+  background-size: contain, contain, contain;
+  animation: moveBackground 0.1s linear infinite;
+}
+@keyframes moveBackground {
+  0% {
+    background-position: 0% 0%, 100% 0%, 200% 0%;
+  }
+  100% {
+    background-position: 100% 0%, 200% 0%, 300% 0%;
+  }
 }
 .header h1 {
   font-size: 2.5em;
-  margin: 0;
 }
 .header p {
   font-size: 1.2em;
@@ -51,7 +46,7 @@ body {
   line-height: 1.6;
 }
 .typography a {
-  color: #6EC1E4;
+  color: #3F51B5;
   text-decoration: underline;
 }
 .typography a:hover {
@@ -62,7 +57,7 @@ body {
   margin-top: 40px;
 }
 .buttons button {
-  padding: 10px 20px;
+  padding: 10% 7%;
   font-size: 1em;
   border: none;
   cursor: pointer;
@@ -71,14 +66,15 @@ body {
   transition: background-color 0.3s;
 }
 .buttons .btn-primary {
-  background-color: #6EC1E4;
+  background-image: url("C:/Users/lucan/Desktop/Jaar 2/GenZVanGogh/GenZVanGogh/Images/dontPress.png");
+  background-size: 100%;
   color: #fff;
 }
 .buttons .btn-primary:hover {
   background-color: #1A237E;
 }
 .buttons .btn-secondary {
-  background-color: #54595F;
+  background-color: #FFC107;
   color: #fff;
 }
 .buttons .btn-secondary:hover {
@@ -103,13 +99,13 @@ body {
   border-radius: 5px;
 }
 .colors .color-samples .color-box.color-primary {
-  background-color: #6EC1E4;
+  background-color: #3F51B5;
 }
 .colors .color-samples .color-box.color-secondary {
-  background-color: #54595F;
+  background-color: #FFC107;
 }
 .colors .color-samples .color-box.color-accent {
-  background-color: #61CE70;
+  background-color: #E91E63;
 }
 
 .flexbox {
@@ -121,7 +117,7 @@ body {
   margin-top: 20px;
 }
 .flexbox .flex-container .flex-item {
-  background-color: #61CE70;
+  background-color: #E91E63;
   color: #fff;
   padding: 20px;
   border-radius: 5px;
@@ -140,7 +136,7 @@ body {
   margin-top: 20px;
 }
 .grid .grid-container .grid-item {
-  background-color: #6EC1E4;
+  background-color: #3F51B5;
   color: #fff;
   padding: 20px;
   text-align: center;
@@ -153,17 +149,40 @@ body {
   text-align: center;
   padding: 30px 0;
   margin-top: 40px;
+  /* Laser basisstijl */
+  /* Laseranimatie */
 }
 .footer a {
-  color: #54595F;
+  color: #FFC107;
   text-decoration: none;
 }
 .footer a:hover {
   text-decoration: underline;
 }
-
-* {
-  animation: shake 0.5s infinite;
+.footer .laser {
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  background-color: red;
+  top: 0;
+  left: 50%;
+  transform-origin: center;
+  transform: rotate(45deg);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+.footer .laser.show {
+  opacity: 1;
+  animation: laser-move 1s ease-in-out;
+}
+@keyframes laser-move {
+  0% {
+    transform: translateX(-50%) rotate(45deg) scaleY(0);
+  }
+  100% {
+    transform: translateX(-50%) rotate(45deg) scaleY(1);
+  }
 }
 
-/*# sourceMappingURL=StardropMeadow.css.map */
+/*# sourceMappingURL=Lijcoesh-Styleguide.css.map */

@@ -41,42 +41,39 @@ const count_array = <a>(arr: a[]): number => {
 
 // A first datastructure the Option type
 
-type Sum<a, b> = { kind: 'left', v: a } | { kind: 'right', v: b }
-type Maybe<a> = Sum<a, false>
+type Sum<a, b> = { kind: 'left', value: a } | { kind: 'right', value: b }
 
-const maybe = <a>(v: a): Maybe<a> => ({ kind: 'left', v: v })
-const definitely = <a>(): Maybe<a> => ({ kind: 'right', v: false })
-
-type Option<a> = ({
-    kind: 'some',
-    value: a
-} | {
-    kind: 'none'
-}) & {
+type Option<a> = Sum<a, false> & {
     map: <b>(f: (_: a) => b) => Option<b>
 }
 
-
 const Some = <a>(v: a): Option<a> => ({
-    kind: 'some',
+    kind: 'left',
     value: v,
     map: function <b>(f: (_: a) => b): Option<b> {
         return Some<b>(f(this.value))
     }
 })
 const None = <a>(): Option<a> => ({
-    kind: 'none',
+    kind: 'right',
+    value: false,
     map: function <b>(f: (_: a) => b): Option<b> {
         return None<b>()
     }
 })
 
-let optional: Option<number> = Some(4)
+let optional1: Option<number> = Some(4)
+console.log("Option 1 value: ", optional1.value)
 
-let plus5 = optional.map(add(5))
+let optional2: Option<number> = None()
+console.log("Option 2 value: ", optional2.value)
 
-console.log(optional)
-console.log(plus5)
+
+let plus5 = optional1.map(add(5))
+console.log("When we increment option 1 we have value: ", plus5.value)
+
+let plus1 = optional1.map(add(1))
+console.log("When we try to increment option 2 nothing happens, because it is None() and value is:  ", plus1.value)
 
 
 // Adding a .map function to transform Option<a> into Option<b>
@@ -99,14 +96,35 @@ type Empty<a> = {
     kind: 'empty'
 }
 
-type LinkedList<a> = ListNode<a> | Empty<a>
+export type LinkedList<a> = ListNode<a> | Empty<a>
 
 
-const ListNode = <a>(value: a, tail: LinkedList<a>): LinkedList<a> => ({ kind: 'node', value: value, tail: tail })
+export const ListNode = <a>(value: a, tail: LinkedList<a>): LinkedList<a> => ({ kind: 'node', value: value, tail: tail })
 
-const Empty = <a>(): LinkedList<a> => ({ kind: 'empty' })
+export const Empty = <a>(): LinkedList<a> => ({ kind: 'empty' })
 
 let list1 = ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5, Empty())))))
 
+
 // 1. Build a .map function for the linked list
-// 2. Use it to increment each item of the list
+
+// 2. Use the map function it to increment each item of the list
+
+
+// 3. Make a transform function using map to create a list of booleans. True for even values and false for odd values. 
+//    i.e. list1.map(isEven) should give the following result [false, true, false, true, false] where the array is the linked list
+
+
+// 4. Make a method list1.reduce<b>(f: (acc: b, x: a) => b, init: b): b where f is a function with 2 parameters 
+//    acc which is the accumulator of type b and x of type a for every element in the list the value is merged with 
+//    the accumulator. The init parameter is of type b and represents the starting point of the accumulator. Init can
+//    be considred the Identity of the return type. 
+
+// 5. Make a .filter() method that takes a predicate function as input. Every element is checked against the predicate and 
+//    and if the element matches the condition it is added to a new list. 
+//    Hint: Use the reduce() function to implement the filter method.
+
+// 6. Make a .toString() method using the .reduce() function. The function transforms the list insto a single formatted string 
+//    Where every value is divided by a comma.
+
+// 7. Go back to the .map function from question 1 and use reduce to implement map().
