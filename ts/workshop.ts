@@ -41,42 +41,42 @@ const count_array = <a>(arr: a[]): number => {
 
 // A first datastructure the Option type
 
-type Sum<a, b> = { kind: 'left', v: a } | { kind: 'right', v: b }
-type Maybe<a> = Sum<a, false>
+//type Sum<a, b> = { kind: 'left', v: a } | { kind: 'right', v: b }
+// type Maybe<a> = Sum<a, false>
 
-const maybe = <a>(v: a): Maybe<a> => ({ kind: 'left', v: v })
-const definitely = <a>(): Maybe<a> => ({ kind: 'right', v: false })
+// const maybe = <a>(v: a): Maybe<a> => ({ kind: 'left', v: v })
+// const definitely = <a>(): Maybe<a> => ({ kind: 'right', v: false })
 
-type Option<a> = ({
-    kind: 'some',
-    value: a
-} | {
-    kind: 'none'
-}) & {
-    map: <b>(f: (_: a) => b) => Option<b>
-}
+// type Option<a> = ({
+//     kind: 'some',
+//     value: a
+// } | {
+//     kind: 'none'
+// }) & {
+//     map: <b>(f: (_: a) => b) => Option<b>
+// }
 
 
-const Some = <a>(v: a): Option<a> => ({
-    kind: 'some',
-    value: v,
-    map: function <b>(f: (_: a) => b): Option<b> {
-        return Some<b>(f(this.value))
-    }
-})
-const None = <a>(): Option<a> => ({
-    kind: 'none',
-    map: function <b>(f: (_: a) => b): Option<b> {
-        return None<b>()
-    }
-})
+// const Some = <a>(v: a): Option<a> => ({
+//     kind: 'some',
+//     value: v,
+//     map: function <b>(f: (_: a) => b): Option<b> {
+//         return Some<b>(f(this.value))
+//     }
+// })
+// const None = <a>(): Option<a> => ({
+//     kind: 'none',
+//     map: function <b>(f: (_: a) => b): Option<b> {
+//         return None<b>()
+//     }
+// })
 
-let optional: Option<number> = Some(4)
+// let optional: Option<number> = Some(4)
 
-let plus5 = optional.map(add(5))
+// let plus5 = optional.map(add(5))
 
-console.log(optional)
-console.log(plus5)
+// console.log(optional)
+// console.log(plus5)
 
 
 // Adding a .map function to transform Option<a> into Option<b>
@@ -110,10 +110,10 @@ let list1 = ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5, Empty())
 
 // 1. Build a .map function for the linked lis
 const map = <a, b>(list: LinkedList<a>, f: (value: a) => b): LinkedList<b> => {
-    if (list.kind === 'empty') {
+    if (list.kind == 'empty') {
         return Empty<b>()
     } else {
-        return ListNode(f(list.value), map(list.tail, f))
+        return ListNode(f(list.value), map(list, f))
     }
 }
 

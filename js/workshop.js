@@ -45,5 +45,16 @@ console.log(plus5);
 const ListNode = (value, tail) => ({ kind: 'node', value: value, tail: tail });
 const Empty = () => ({ kind: 'empty' });
 let list1 = ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5, Empty())))));
-// 1. Build a .map function for the linked list
+// 1. Build a .map function for the linked lis
+const map = (list, f) => {
+    if (list.kind == 'empty') {
+        return Empty();
+    }
+    else {
+        return ListNode(f(list.value), map(list, f));
+    }
+};
 // 2. Use it to increment each item of the list
+const Increment = (x) => x + 1;
+let incrementedList = map(list1, Increment);
+console.log(incrementedList);
