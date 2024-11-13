@@ -8,6 +8,13 @@ Install Sass:
 Install Typescript:
 `npm install -g typescript`
 
+**Compile and run a single file**
+
+`tsc sample.ts` This will compile a single Typescript file into a Javascript file.
+
+`node sample.js` Next, you can run thw generated Javascript file using NodeJs. 
+
+
 **Running**
 
 The command below will compile all `.scss` files from the `./sass` folder and put it inside the `./css` folder as `.css` files.
